@@ -6,10 +6,12 @@ import biblioteka.interfejs.BibliotekaIntefejs;
 
 public class Biblioteka implements BibliotekaIntefejs {
 
+	//Ovo je lista svih knjiga u biblioteci
 	private LinkedList<Knjiga> knjige = new LinkedList<Knjiga>();
 	
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
+		//ne smeju se dodavati null knjige
 		if(knjiga== null || knjige.contains(knjiga)) 
 			throw new RuntimeException("Greska pri unosu knjige");
 		
